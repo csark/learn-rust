@@ -1,1 +1,1 @@
-/home/clark/rust/learn-rust/variables/target/debug/variables: /home/clark/rust/learn-rust/variables/src/main.rs
+/home/clark/rust/learn-rust/ch3-variables/target/debug/variables: /home/clark/rust/learn-rust/ch3-variables/src/main.rs
