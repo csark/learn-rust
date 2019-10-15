@@ -18,9 +18,9 @@ fn main() {
     }
     // Bad Mutable/Immutable references, This will make the compiler angry
     // let w = vec![1,2,3,4,5];
-    // let first = &v[0];
+    // let first = &w[0];
     //
-    // v.push(6);
+    // w.push(6);
     //
     // println!("The first element is: {}", first);
     // End angry compiler
@@ -33,10 +33,15 @@ fn main() {
 
     // Loop over a vector with ability to change contents
     let mut b = vec![100,32,57];
-    for i in &mut b {
+    for i in &mut b { // mutable reference of a vector
         println!("Old value i: {}", i);
-        *i += 50;
+        *i += 50; // dereferencing i to get to the value stored there
         println!("New value i: {}", i);
+    }
+
+    println!("Vector B values are now: ");
+    for i in &mut b {
+        println!("Value of i in b: {}", i);
     }
 
     // Using an enum to store multiple types
