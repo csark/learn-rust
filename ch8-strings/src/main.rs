@@ -46,4 +46,12 @@ fn main() {
     let s = &hello[0..4];
 
     println!("s: {}", s);
+
+    for c in "नमस्ते".chars() {
+        println!("char: {}", c);
+    }
+
+    for b in "नमस्ते".bytes() {
+        println!("byte: {}", b);
+    }
 }
