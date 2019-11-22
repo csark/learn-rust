@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 fn mean(list: &[i32]) -> f32 {
     let mut total = 0;
     for i in list {
@@ -13,8 +15,19 @@ fn median(list: &[i32]) -> i32 {
 }
 
 fn mode(list: &[i32]) -> i32 {
-    let example = 4;
-    example
+    let mut map = HashMap::new();
+
+    let mut highest = 0;
+    let mut highest_count = 0;
+    for i in list {
+        let count = map.entry(i).or_insert(0);
+        *count += 1;
+        if highest_count < *count {
+            highest = *i;
+            highest_count = *count
+        }
+    }
+    highest
 }
 
 fn main() {
@@ -34,6 +47,7 @@ fn main() {
 
     println!("The mean is: {:.2}", mean(&v));
     v.sort();
-    println!("{:?}", v);
+    // println!("{:?}", v);
     println!("The median is: {:?}", median(&v));
+    println!("The mode is: {}", mode(&v));
 }
