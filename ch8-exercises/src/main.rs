@@ -8,8 +8,8 @@ fn mean(list: &[i32]) -> f32 {
 }
 
 fn median(list: &[i32]) -> i32 {
-    let example = 4;
-    example
+    let mid: i32 = (list.len() as i32) / 2;
+    list[mid as usize]
 }
 
 fn mode(list: &[i32]) -> i32 {
@@ -33,4 +33,7 @@ fn main() {
     v.push(4);
 
     println!("The mean is: {:.2}", mean(&v));
+    v.sort();
+    println!("{:?}", v);
+    println!("The median is: {:?}", median(&v));
 }
