@@ -11,9 +11,6 @@ fn main() {
         process::exit(1);
     });
 
-    println!("Searching for {}", config.query);
-    println!("In file {}", config.filename);
-
     // if let is used here instead of unwrap_or_else because the run function
     // does not return a value, only ()
     if let Err(e) = minigrep::run(config) {
