@@ -1,4 +1,4 @@
-// TODO: https://doc.rust-lang.org/book/ch20-02-multithreaded.html#validating-the-number-of-threads-in-new
+// TODO: https://doc.rust-lang.org/book/ch20-02-multithreaded.html#sending-requests-to-threads-via-channels
 
 use std::io::prelude::*;
 use std::net::TcpStream;
