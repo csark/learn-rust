@@ -1,17 +1,21 @@
-// TODO: Ch20.2  
+// TODO: https://doc.rust-lang.org/book/ch20-02-multithreaded.html#validating-the-number-of-threads-in-new
 
 use std::io::prelude::*;
 use std::net::TcpStream;
 use std::net::TcpListener;
 use std::fs;
+use ch20::ThreadPool;
 
 fn main(){
     let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
+    let pool = ThreadPool::new(4);
 
     for stream in listener.incoming() {
         let stream = stream.unwrap();
 
-        handle_connection(stream);
+        pool.exexute(|| {
+            handle_connection(stream);
+        });
     }
 }
 
